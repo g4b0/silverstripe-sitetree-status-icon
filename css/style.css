@@ -1,0 +1,11 @@
+li.status_draft > a > span.text > span.jstree-pageicon {
+	background: transparent url('../images/status_draft.png') 0 0 no-repeat ;
+}
+
+li.status_draft_published > a > span.text > span.jstree-pageicon {
+	background: transparent url('../images/status_draft_published.png') 0 0 no-repeat ;
+}
+
+li.status_published > a > span.text > span.jstree-pageicon {
+	background: transparent url('../images/status_published.png') 0 0 no-repeat ;
+}

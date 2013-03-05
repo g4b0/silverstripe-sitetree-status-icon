@@ -15,7 +15,7 @@ class ZkSiteTreeIconExtension extends DataExtension {
 
 		if (isset($flags['addedtodraft'])) {
 			$flags['status_draft'] = '';
-		} elseif (isset($flags['modified'])) {
+		} elseif ($this->stagesDiffer('Stage', 'Live') /*isset($flags['modified'])*/) {
 			$flags['status_draft_published'] = '';
 		} else {
 			$flags['status_published'] = '';

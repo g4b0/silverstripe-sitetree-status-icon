@@ -1,21 +1,25 @@
 <?php
 
 class ZkSiteTreeIconExtension extends DataExtension {
-
+	
 	public function updateStatusFlags(&$flags) {
 
-		Requirements::css(ZK_SITE_TREE_ICON . "/css/style.css");
-		Requirements::javascript(ZK_SITE_TREE_ICON . "/javascript/chicon.js");
+		LeftAndMain::require_css(ZK_SITE_TREE_ICON . "/css/style.css");
+		LeftAndMain::require_javascript(ZK_SITE_TREE_ICON . "/javascript/chicon.js");
 
-//		if ($this->owner->Title == 'Faq') {
-//			var_dump($this->owner->Title);
-//			var_dump($flags);
-//			exit;
-//		}
+		static $prepop = true;
+		if ($prepop) {
+			Versioned::prepopulate_versionnumber_cache('SiteTree', 'Stage');
+			Versioned::prepopulate_versionnumber_cache('SiteTree', 'Live');
+			$prepop = false;
+		}
 
+		$stageVersion = Versioned::get_versionnumber_by_stage('SiteTree', 'Stage', $this->owner->ID);
+		$liveVersion = Versioned::get_versionnumber_by_stage('SiteTree', 'Live', $this->owner->ID);
+						
 		if (isset($flags['addedtodraft'])) {
 			$flags['status_draft'] = '';
-		} elseif ($this->stagesDiffer('Stage', 'Live') /*isset($flags['modified'])*/) {
+		} elseif ($stageVersion > $liveVersion /*$this->owner->stagesDiffer('Stage', 'Live')*/ /* isset($flags['modified'])*/) {
 			$flags['status_draft_published'] = '';
 		} else {
 			$flags['status_published'] = '';

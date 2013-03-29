@@ -4,9 +4,6 @@ class ZkSiteTreeIconExtension extends DataExtension {
 	
 	public function updateStatusFlags(&$flags) {
 
-		LeftAndMain::require_css(ZK_SITE_TREE_ICON . "/css/style.css");
-		LeftAndMain::require_javascript(ZK_SITE_TREE_ICON . "/javascript/chicon.js");
-
 		static $prepop = true;
 		if ($prepop) {
 			Versioned::prepopulate_versionnumber_cache('SiteTree', 'Stage');

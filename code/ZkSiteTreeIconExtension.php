@@ -11,14 +11,14 @@ class ZkSiteTreeIconExtension extends DataExtension {
 			$prepop = false;
 		}
 
-		$stageVersion = Versioned::get_versionnumber_by_stage('SiteTree', 'Stage', $this->owner->ID);
-		$liveVersion = Versioned::get_versionnumber_by_stage('SiteTree', 'Live', $this->owner->ID);
-						
-		if (isset($flags['addedtodraft'])) {
+		$stageVersion = intval(Versioned::get_versionnumber_by_stage('SiteTree', 'Stage', $this->owner->ID));
+		$liveVersion = intval(Versioned::get_versionnumber_by_stage('SiteTree', 'Live', $this->owner->ID));
+					
+		if ($liveVersion == 0 /*isset($flags['addedtodraft'])*/) {
 			$flags['status_draft'] = '';
-		} elseif ($stageVersion > $liveVersion /*$this->owner->stagesDiffer('Stage', 'Live')*/ /* isset($flags['modified'])*/) {
+		} elseif ($stageVersion > $liveVersion /*$this->stagesDiffer('Stage', 'Live')*//*isset($flags['modified']*/) {
 			$flags['status_draft_published'] = '';
-		} else {
+		}	else {
 			$flags['status_published'] = '';
 		}
 	}

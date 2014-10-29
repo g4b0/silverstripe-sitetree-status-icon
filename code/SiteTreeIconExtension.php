@@ -1,6 +1,6 @@
 <?php
 
-class ZkSiteTreeIconExtension extends DataExtension {
+class SiteTreeIconExtension extends DataExtension {
 	
 	public function updateStatusFlags(&$flags) {
 

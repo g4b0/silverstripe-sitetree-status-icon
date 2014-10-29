@@ -1,4 +1,4 @@
-# ZkSiteTreeIcon
+# SiteTreeIcon
 
 Set the icons in SiteTree 
 

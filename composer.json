@@ -1,6 +1,6 @@
 {
-    "name": "zirak/sitetree-icon",
-    "description": "Set the icons for SiteTree status",
+    "name": "zirak/sitetree-status-icon",
+    "description": "Set the icons for various SiteTree status",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "icons", "status", "published", "draft"],
     "license": "GPL-2",

@@ -14,9 +14,11 @@ Silverstripe 3.0
 
 Install the module through [composer](http://getcomposer.org):
 
+```bash
 	composer require zirak/sitetree-status-icon
   composer update
   run /dev/build?flush=all
+```
 
 ## Usage
 Simply enjoy your icons

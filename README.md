@@ -1,6 +1,6 @@
 # SiteTreeIcon
 
-Set the icons in SiteTree 
+Set the icons for SiteTree status
 
 ## Requirements
 
@@ -12,8 +12,11 @@ Silverstripe 3.0
 
 ## Install
 
-- Download the module and unzip into the document root
-- run /dev/build
+Install the module through [composer](http://getcomposer.org):
+
+	composer require zirak/sitetree-icon
+  composer update
+  run /dev/build?flush=all
 
 ## Usage
 Simply enjoy your icons

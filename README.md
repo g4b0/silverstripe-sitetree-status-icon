@@ -8,7 +8,7 @@ Silverstripe 3.0
 
 ## Features
 
-- Change SiteTree items reflecting the page publish statuts
+- Change SiteTree items reflecting the page publish status
 
 ## Install
 

@@ -1,7 +1,7 @@
 <?php
 
 class SiteTreeIconExtension extends DataExtension {
-	
+
 	public function updateStatusFlags(&$flags) {
 
 		static $prepop = true;
@@ -13,7 +13,7 @@ class SiteTreeIconExtension extends DataExtension {
 
 		$stageVersion = intval(Versioned::get_versionnumber_by_stage('SiteTree', 'Stage', $this->owner->ID));
 		$liveVersion = intval(Versioned::get_versionnumber_by_stage('SiteTree', 'Live', $this->owner->ID));
-					
+
 		if ($liveVersion == 0 /*isset($flags['addedtodraft'])*/) {
 			$flags['status_draft'] = '';
 		} elseif ($stageVersion > $liveVersion /*$this->stagesDiffer('Stage', 'Live')*//*isset($flags['modified']*/) {
